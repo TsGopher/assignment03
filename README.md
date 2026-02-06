@@ -1,3 +1,7 @@
+## Vehicle Booking System ERD
+
+https://drawsql.app/teams/ibntofajjal/diagrams/vehicle-rental-system
+
 ## SQL Queries Overview
 
 This repository contains a single SQL script, `queries.sql`, with sample queries for a vehicle booking system. The tables referenced are `users`, `vehicles`, and `bookings`.
