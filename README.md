@@ -2,6 +2,10 @@
 
 https://drawsql.app/teams/ibntofajjal/diagrams/vehicle-rental-system
 
+## Viva Video Link
+
+https://youtu.be/M3u2Ztc5jS0
+
 ## SQL Queries Overview
 
 This repository contains a single SQL script, `queries.sql`, with sample queries for a vehicle booking system. The tables referenced are `users`, `vehicles`, and `bookings`.
