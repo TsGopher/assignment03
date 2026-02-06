@@ -1,8 +1,4 @@
-## Query 1: JOIN
-
-#### Requirement: Retrieve booking information along with Customer name and Vehicle name.
-
-```sql
+-- Query 1: JOIN
 SELECT
     b.booking_id,
     u.name AS customer_name,
@@ -13,13 +9,8 @@ SELECT
 FROM bookings b
 INNER JOIN users u ON b.user_id = u.user_id
 INNER JOIN vehicles v ON b.vehicle_id = v.vehicle_id
-```
 
-## Query 2: EXISTS
-
-#### Requirement: Find all vehicles that have never been booked.
-
-```sql
+-- Query 2: EXISTS
 SELECT
     v.vehicle_id,
     v.name,
@@ -34,22 +25,13 @@ WHERE NOT EXISTS (
     FROM bookings b
     WHERE b.vehicle_id = v.vehicle_id
 );
-```
 
-## Query 3: WHERE
-
-#### Requirement: Retrieve all available vehicles of a specific type (e.g. cars).
-
-```sql
+-- Query 3: WHERE
+-- 
 SELECT * FROM vehicles
 WHERE status = 'available' AND type = 'car';
-```
 
-## Query 4: GROUP BY and HAVING
-
-#### Requirement: Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings.
-
-```sql
+-- Query 4: GROUP BY and HAVING
 SELECT
     v.name AS vehicle_name,
     COUNT(b.booking_id) AS total_bookings
