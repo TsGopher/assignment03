@@ -35,3 +35,29 @@ WHERE NOT EXISTS (
     WHERE b.vehicle_id = v.vehicle_id
 );
 ```
+
+## Query 3: WHERE
+
+#### Requirement: Retrieve all available vehicles of a specific type (e.g. cars).
+
+```sql
+SELECT * FROM vehicles
+WHERE status = 'available' AND type = 'car';
+```
+
+## Query 4: GROUP BY and HAVING
+
+#### Requirement: Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings.
+
+```sql
+SELECT
+    v.name AS vehicle_name,
+    COUNT(b.booking_id) AS total_bookings
+FROM vehicles v
+INNER JOIN bookings b
+    ON v.vehicle_id = b.vehicle_id
+GROUP BY
+    v.vehicle_id,
+    v.name
+HAVING COUNT(b.booking_id) > 2;
+```
