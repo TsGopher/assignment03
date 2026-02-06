@@ -1,4 +1,5 @@
 -- Query 1: JOIN
+
 SELECT
     b.booking_id,
     u.name AS customer_name,
@@ -11,6 +12,7 @@ INNER JOIN users u ON b.user_id = u.user_id
 INNER JOIN vehicles v ON b.vehicle_id = v.vehicle_id
 
 -- Query 2: EXISTS
+
 SELECT
     v.vehicle_id,
     v.name,
@@ -27,11 +29,12 @@ WHERE NOT EXISTS (
 );
 
 -- Query 3: WHERE
--- 
+
 SELECT * FROM vehicles
 WHERE status = 'available' AND type = 'car';
 
 -- Query 4: GROUP BY and HAVING
+
 SELECT
     v.name AS vehicle_name,
     COUNT(b.booking_id) AS total_bookings
@@ -42,4 +45,3 @@ GROUP BY
     v.vehicle_id,
     v.name
 HAVING COUNT(b.booking_id) > 2;
-```
